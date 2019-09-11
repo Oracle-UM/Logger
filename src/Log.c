@@ -106,11 +106,8 @@ int clear_log(Log* log) {
 }
 
 int rm_log(Log* log) {
-    if (fclose(log->out_file) == EOF) {
-        free(log);
-        return EXIT_FAILURE;
-    }
-
     free(log);
-    return EXIT_SUCCESS;
+    return fclose(log->out_file) == EOF
+        ? EXIT_FAILURE
+        : EXIT_SUCCESS;
 }
