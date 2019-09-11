@@ -3,7 +3,6 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include <assert.h>
 #include <errno.h>
 #include <stdarg.h>
 #include <stdlib.h>
